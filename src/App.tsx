@@ -1,3 +1,4 @@
+import Alert from "./components/Alerts";
 import JsonViewer from "./components/JsonViewer";
 import ListGroup from "./components/ListGroup";
 import React from "react";
@@ -11,10 +12,18 @@ function App() {
 
     return (
         <div>
-            <ListGroup items={items} heading="Cities" onSelectItem={handleSelectItem} />
-            <JsonViewer />
+            <Alert>
+                Hello <span>World</span>
+            </Alert>
         </div>
     );
+
+    // return (
+    //     <div>
+    //         <ListGroup items={items} heading="Cities" onSelectItem={handleSelectItem} />
+    //         <JsonViewer />
+    //     </div>
+    // );
 }
 
 export default App;
