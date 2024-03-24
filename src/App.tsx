@@ -1,4 +1,5 @@
 import Alert from "./components/Alerts";
+import Button from "./components/Button";
 import JsonViewer from "./components/JsonViewer";
 import ListGroup from "./components/ListGroup";
 import React from "react";
@@ -10,11 +11,20 @@ function App() {
         console.log(item);
     };
 
+    const handleButtonClick = () => {
+        alert("Yo yo");
+    };
+
     return (
         <div>
             <Alert>
                 Hello <span>World</span>
             </Alert>
+            <Button
+                text="Press me"
+                onClick={handleButtonClick}
+                colour="primary"
+            />
         </div>
     );
 
