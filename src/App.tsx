@@ -2,7 +2,7 @@ import Alert from "./components/Alerts";
 import Button from "./components/Button";
 import JsonViewer from "./components/JsonViewer";
 import ListGroup from "./components/ListGroup";
-import React from "react";
+import React, { useState } from "react";
 
 function App() {
     const items = ["New York", "San Francisco", "Tokyo", "London", "Paris"];
@@ -11,15 +11,21 @@ function App() {
         console.log(item);
     };
 
+    const [alertVisible, setAlertVisibility] = useState(false);
+
     const handleButtonClick = () => {
-        alert("Yo yo");
+        setAlertVisibility(true);
+    };
+
+    const handleCloseAlert = () => {
+        setAlertVisibility(false);
     };
 
     return (
         <div>
-            <Alert>
-                Hello <span>World</span>
-            </Alert>
+            {alertVisible && (
+                <Alert closeAlertButton={handleCloseAlert}>My alert</Alert>
+            )}
             <Button
                 text="Press me"
                 onClick={handleButtonClick}
