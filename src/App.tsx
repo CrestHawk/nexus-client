@@ -1,7 +1,7 @@
 import Alert from "./components/Alerts";
 import Button from "./components/Button";
 import JsonViewer from "./components/JsonViewer";
-import ListGroup from "./components/ListGroup";
+import ListGroup from "./components/ListGroup/ListGroup";
 import React, { useState } from "react";
 
 function App() {
@@ -21,25 +21,28 @@ function App() {
         setAlertVisibility(false);
     };
 
-    return (
-        <div>
-            {alertVisible && (
-                <Alert closeAlertButton={handleCloseAlert}>My alert</Alert>
-            )}
-            <Button
-                text="Press me"
-                onClick={handleButtonClick}
-                colour="primary"
-            />
-        </div>
-    );
-
     // return (
     //     <div>
-    //         <ListGroup items={items} heading="Cities" onSelectItem={handleSelectItem} />
-    //         <JsonViewer />
+    //         {alertVisible && (
+    //             <Alert closeAlertButton={handleCloseAlert}>My alert</Alert>
+    //         )}
+    //         <Button
+    //             text="Press me"
+    //             onClick={handleButtonClick}
+    //             colour="primary"
+    //         />
     //     </div>
     // );
+
+    return (
+        <>
+            <ListGroup
+                items={items}
+                heading="Cities"
+                onSelectItem={handleSelectItem}
+            />
+        </>
+    );
 }
 
 export default App;
